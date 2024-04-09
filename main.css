@@ -62,3 +62,31 @@ body {
 #create-task-modal {
     display: none;
 }
+
+.tasks {
+    display: flex;
+    /* height: 80%; */
+}
+
+.todo {
+    /* border: 2px solid blue; */
+    width: 25%;
+    /* height: 80vh; */
+    text-align: center;
+}
+
+.in-progress {
+    /* border: 2px solid blue; */
+    width: 25%;
+    text-align: center;
+}
+
+.review {
+    width: 25%;
+    text-align: center;
+}
+
+.done {
+    width: 25%;
+    text-align: center;
+}
