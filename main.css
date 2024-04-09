@@ -58,3 +58,7 @@ body {
 .nav-btn:hover {
     background-color: green;
 }
+
+#create-task-modal {
+    display: none;
+}
