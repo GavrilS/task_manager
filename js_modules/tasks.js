@@ -36,7 +36,9 @@ class Task {
     }
 }
 
+const tasks = [];
 
 export {
-    Task
+    Task,
+    tasks
 };
