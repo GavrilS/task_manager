@@ -1,3 +1,5 @@
+import { Task, tasks } from './js_modules/tasks.js'
+
 const mainComponent = document.querySelector('.main-component');
 const createTask = document.querySelector('#create-task');
 const saveTasks = document.querySelector('#save-task');
@@ -28,4 +30,8 @@ saveTaskModal.addEventListener('click', (e) => {
 
     console.log(title);
     console.log(description);
+    const newTask = new Task(title, description, status);
+    console.log('New task: ', newTask);
+    tasks.push(newTask);
+    console.log('tasks: ', tasks);
 })
