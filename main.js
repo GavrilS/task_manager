@@ -35,5 +35,11 @@ saveTaskModal.addEventListener('click', (e) => {
     tasks.push(newTask);
     console.log('tasks: ', tasks);
     loadTasks();
+    closeModal(newTaskForm);
 })
 
+
+function closeModal(modal) {
+    modal.style.display = 'none';
+    mainComponent.style.opacity = 1;
+}

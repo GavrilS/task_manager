@@ -59,12 +59,22 @@ function loadTasks() {
 
 function addTaskToElement(element, task) {
     const newTaskCard = document.createElement('div');
-    const title = document.createTextNode('<h1>' + task.title + '</h1>');
-    const description = document.createTextNode('<p>' + task.description + '</p>');
-    const status = document.createTextNode('<h3>' + task.status + '</h3>');
-    newTaskCard.appendChild(title);
-    newTaskCard.appendChild(description);
-    newTaskCard.appendChild(status);
+
+    const titleElement = document.createElement('h1');
+    const title = document.createTextNode(task.title);
+    titleElement.appendChild(title)
+
+    const descriptionElement = document.createElement('p');
+    const description = document.createTextNode(task.description);
+    descriptionElement.appendChild(description);
+
+    const statusElement = document.createElement('h3');
+    const status = document.createTextNode(task.status);
+    statusElement.appendChild(status);
+
+    newTaskCard.appendChild(titleElement);
+    newTaskCard.appendChild(descriptionElement);
+    newTaskCard.appendChild(statusElement);
     element.appendChild(newTaskCard);
 }
 
