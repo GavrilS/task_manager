@@ -1,9 +1,9 @@
-import { Task, tasks } from './js_modules/tasks.js'
+import { Task, tasks, loadTasks } from './js_modules/tasks.js'
 
 const mainComponent = document.querySelector('.main-component');
 const createTask = document.querySelector('#create-task');
 const saveTasks = document.querySelector('#save-task');
-const loadTasks = document.querySelector('#load-task');
+const loadTasksBtn = document.querySelector('#load-task');
 const closePopup = document.querySelector('.popup-btn-close');
 const saveTaskModal = document.querySelector('#create-new-task');
 
@@ -34,4 +34,6 @@ saveTaskModal.addEventListener('click', (e) => {
     console.log('New task: ', newTask);
     tasks.push(newTask);
     console.log('tasks: ', tasks);
+    loadTasks();
 })
+
