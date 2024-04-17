@@ -1,4 +1,5 @@
 import { Task, tasks, loadTasks } from './js_modules/tasks.js'
+import { getSavedTasks } from './js_modules/tasks_persistence.js'
 
 const mainComponent = document.querySelector('.main-component');
 const createTask = document.querySelector('#create-task');
@@ -43,3 +44,8 @@ function closeModal(modal) {
     modal.style.display = 'none';
     mainComponent.style.opacity = 1;
 }
+
+const currentTasks = getSavedTasks();
+currentTasks.forEach((task) => {
+    console.log(task);
+})
