@@ -44,8 +44,3 @@ function closeModal(modal) {
     modal.style.display = 'none';
     mainComponent.style.opacity = 1;
 }
-
-const currentTasks = getSavedTasks();
-currentTasks.forEach((task) => {
-    console.log(task);
-})

@@ -1,18 +1,15 @@
-async function retrieveSavedTasks() {
+async function getSavedTasks() {
+    let tasks = [];
     try {
         const result = await fetch("../artifacts/saved_tasks.json");
-        const tasks = await result.json();
-        return tasks;
+        tasks = await result.json();
     } catch (err) {
         console.log('We got an error retrieving saved tasks\n', err);
-        return [];
     }
-}
 
-async function getSavedTasks() {
-    const tasks = await retrieveSavedTasks();
     return tasks;
 }
+
 
 
 export {
