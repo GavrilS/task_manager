@@ -1,5 +1,5 @@
 import { Task, tasks, loadTasks } from './js_modules/tasks.js'
-import { getSavedTasks } from './js_modules/tasks_persistence.js'
+import { getSavedTasks, persistActiveTasks } from './js_modules/tasks_persistence.js'
 
 const mainComponent = document.querySelector('.main-component');
 const createTask = document.querySelector('#create-task');
@@ -37,6 +37,7 @@ saveTaskModal.addEventListener('click', (e) => {
     console.log('tasks: ', tasks);
     loadTasks();
     closeModal(newTaskForm);
+    persistActiveTasks(tasks);
 })
 
 
@@ -44,3 +45,4 @@ function closeModal(modal) {
     modal.style.display = 'none';
     mainComponent.style.opacity = 1;
 }
+

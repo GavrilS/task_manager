@@ -11,7 +11,22 @@ async function getSavedTasks() {
 }
 
 
+async function persistActiveTasks(tasks) {
+    // const options = {
+    //     startIn: 'downloads',
+    //     suggestedName: 'saved_tasks.json'
+    // }
+    // const newHandle = await window.showSaveFilePicker(options);
+    const newHandle = await window.showSaveFilePicker();
+    const writableStream = await newHandle.createWritable();
+
+    await writableStream.write(JSON.stringify(tasks));
+
+    await writableStream.close();
+}
+
 
 export {
-    getSavedTasks
+    getSavedTasks,
+    persistActiveTasks
 }
