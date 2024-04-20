@@ -36,7 +36,7 @@ class Task {
     }
 }
 
-const tasks = [];
+let tasks = [];
 
 function loadTasks() {
     const toDoElement = document.querySelector('.todo');
