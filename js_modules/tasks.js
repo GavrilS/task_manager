@@ -74,21 +74,22 @@ function addTaskToElement(element, task) {
     const title = document.createTextNode(task.title);
     titleElement.appendChild(title);
     titleElement.classList.add('.ag-courses-item_title');
-    link.appendChild(titleElement);
+    itemContainer.appendChild(titleElement);
 
     const descriptionElement = document.createElement('p');
     const description = document.createTextNode(task.description);
     descriptionElement.appendChild(description);
     descriptionElement.classList.add('.ag-courses-item_body-box');
-    link.appendChild(descriptionElement);
+    itemContainer.appendChild(descriptionElement);
 
     const statusElement = document.createElement('h3');
     const status = document.createTextNode(task.status);
     statusElement.appendChild(status);
     statusElement.classList.add('.ag-courses-item_body-box');
-    link.appendChild(statusElement);
+    itemContainer.appendChild(statusElement);
 
     element.appendChild(newTaskCard);
+    console.log(element);
 }
 
 export {

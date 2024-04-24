@@ -6,11 +6,11 @@ async function loadSavedTasks() {
     console.log('savedTasks: ', savedTasks);
     try {
         savedTasks.forEach((task) => {
-            console.log('task: ', task)
+            // console.log('task: ', task)
             let { _title, _description, _status } = task;
             tasks.push(new Task(_title, _description, _status));
         });
-        console.log('tasks: ', tasks);
+        // console.log('tasks: ', tasks);
         loadTasks();
     } catch (err) {
         console.log('Saved tasks were not loaded properly...');
@@ -47,10 +47,10 @@ saveTaskModal.addEventListener('click', (e) => {
     const description = taskFormChildren[1].lastElementChild.value;
     const status = taskFormChildren[2].lastElementChild.value;
 
-    console.log(title);
-    console.log(description);
+    // console.log(title);
+    // console.log(description);
     const newTask = new Task(title, description, status);
-    console.log('New task: ', newTask);
+    // console.log('New task: ', newTask);
     tasks.push(newTask);
     console.log('tasks: ', tasks);
     loadTasks();
