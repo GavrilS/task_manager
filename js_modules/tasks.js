@@ -60,40 +60,56 @@ function loadTasks() {
 function addTaskToElement(element, task) {
     const newTaskCard = document.createElement('div');
     newTaskCard.classList.add('.ag-courses_item');
+    newTaskCard.id = 'card-parent';
 
     const link = document.createElement('a');
     link.href = '#';
     link.classList.add('.ag-courses-item_link');
+    link.id = 'card-link';
     newTaskCard.appendChild(link);
 
     const itemContainer = document.createElement('div');
     itemContainer.classList.add('.ag-courses-item_bg');
+    itemContainer.id = 'card-container';
     link.appendChild(itemContainer);
 
     const titleElement = document.createElement('h1');
     const title = document.createTextNode(task.title);
     titleElement.appendChild(title);
     titleElement.classList.add('.ag-courses-item_title');
+    titleElement.id = 'card-title';
     itemContainer.appendChild(titleElement);
 
     const descriptionElement = document.createElement('p');
     const description = document.createTextNode(task.description);
     descriptionElement.appendChild(description);
     descriptionElement.classList.add('.ag-courses-item_body-box');
+    descriptionElement.id = 'card-description';
     itemContainer.appendChild(descriptionElement);
 
     const statusElement = document.createElement('h3');
     const status = document.createTextNode(task.status);
     statusElement.appendChild(status);
     statusElement.classList.add('.ag-courses-item_body-box');
+    statusElement.id = 'card-status';
     itemContainer.appendChild(statusElement);
 
     element.appendChild(newTaskCard);
     console.log(element);
 }
 
+const taskElemIds = [
+    'card-parent',
+    'card-link',
+    'card-container',
+    'card-title',
+    'card-description',
+    'card-status'
+]
+
 export {
     Task,
     tasks,
-    loadTasks
+    loadTasks,
+    taskElemIds
 };
