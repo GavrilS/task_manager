@@ -61,8 +61,23 @@ saveTaskModal.addEventListener('click', (e) => {
 const tasksElement = document.querySelector('.tasks');
 tasksElement.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
+    if (taskElemIds.includes(e.target.id)) {
+        console.log('Element is a task card element: ', e.target);
+        const taskCardElement = getTaskParent(e.target);
+        console.log('Parent task card element: ', taskCardElement);
+    } else {
+        console.log('Element is not a task card element: ', e.target);
+    }
 })
+
+function getTaskParent(element) {
+    if (element.id === 'card-parent') {
+        return element;
+    } else {
+        return getTaskParent(element.parentElement);
+    }
+}
 
 const newTaskForm = document.getElementById('create-task-modal');
 
