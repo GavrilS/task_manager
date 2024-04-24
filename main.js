@@ -1,4 +1,4 @@
-import { Task, tasks, loadTasks } from './js_modules/tasks.js'
+import { Task, tasks, loadTasks, taskElemIds } from './js_modules/tasks.js'
 import { getSavedTasks, persistActiveTasks } from './js_modules/tasks_persistence.js'
 
 async function loadSavedTasks() {
@@ -20,25 +20,25 @@ async function loadSavedTasks() {
 loadSavedTasks();
 
 const mainComponent = document.querySelector('.main-component');
+
 const createTask = document.querySelector('#create-task');
-const saveTasks = document.querySelector('#save-task');
-const loadTasksBtn = document.querySelector('#load-task');
-const closePopup = document.querySelector('.popup-btn-close');
-const saveTaskModal = document.querySelector('#create-new-task');
-
-const newTaskForm = document.getElementById('create-task-modal');
-
 createTask.addEventListener('click', () => {
     mainComponent.style.opacity = 0.5;
     newTaskForm.style.display = 'block';
     console.log(newTaskForm);
 })
 
+const saveTasks = document.querySelector('#save-task');
+
+const loadTasksBtn = document.querySelector('#load-task');
+
+const closePopup = document.querySelector('.popup-btn-close');
 closePopup.addEventListener('click', () => {
     newTaskForm.style.display = 'none';
     mainComponent.style.opacity = 1;
 })
 
+const saveTaskModal = document.querySelector('#create-new-task');
 saveTaskModal.addEventListener('click', (e) => {
     e.preventDefault();
     // console.log(e);
@@ -57,6 +57,14 @@ saveTaskModal.addEventListener('click', (e) => {
     closeModal(newTaskForm);
     persistActiveTasks(tasks);
 })
+
+const tasksElement = document.querySelector('.tasks');
+tasksElement.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(e.target);
+})
+
+const newTaskForm = document.getElementById('create-task-modal');
 
 
 function closeModal(modal) {
