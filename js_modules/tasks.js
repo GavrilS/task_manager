@@ -59,22 +59,35 @@ function loadTasks() {
 
 function addTaskToElement(element, task) {
     const newTaskCard = document.createElement('div');
+    newTaskCard.classList.add('.ag-courses_item');
+
+    const link = document.createElement('a');
+    link.href = '#';
+    link.classList.add('.ag-courses-item_link');
+    newTaskCard.appendChild(link);
+
+    const itemContainer = document.createElement('div');
+    itemContainer.classList.add('.ag-courses-item_bg');
+    link.appendChild(itemContainer);
 
     const titleElement = document.createElement('h1');
     const title = document.createTextNode(task.title);
-    titleElement.appendChild(title)
+    titleElement.appendChild(title);
+    titleElement.classList.add('.ag-courses-item_title');
+    link.appendChild(titleElement);
 
     const descriptionElement = document.createElement('p');
     const description = document.createTextNode(task.description);
     descriptionElement.appendChild(description);
+    descriptionElement.classList.add('.ag-courses-item_body-box');
+    link.appendChild(descriptionElement);
 
     const statusElement = document.createElement('h3');
     const status = document.createTextNode(task.status);
     statusElement.appendChild(status);
+    statusElement.classList.add('.ag-courses-item_body-box');
+    link.appendChild(statusElement);
 
-    newTaskCard.appendChild(titleElement);
-    newTaskCard.appendChild(descriptionElement);
-    newTaskCard.appendChild(statusElement);
     element.appendChild(newTaskCard);
 }
 
