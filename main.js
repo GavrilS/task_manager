@@ -23,6 +23,7 @@ loadSavedTasks();
 const mainComponent = document.querySelector('.main-component');
 mainComponent.addEventListener('click', () => {
     if (mainComponent.style.opacity < 1) {
+        console.log('Condition completed!');
         removeCardFocus(mainComponent);
     }
 })
