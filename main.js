@@ -1,5 +1,6 @@
 import { Task, tasks, loadTasks, taskElemIds } from './js_modules/tasks.js'
 import { getSavedTasks, persistActiveTasks } from './js_modules/tasks_persistence.js'
+import { getTaskParent, focusCardOnClick } from './js_modules/card_functionality.js';
 
 async function loadSavedTasks() {
     let savedTasks = await getSavedTasks();
@@ -22,6 +23,7 @@ loadSavedTasks();
 const mainComponent = document.querySelector('.main-component');
 
 const createTask = document.querySelector('#create-task');
+const newTaskForm = document.getElementById('create-task-modal');
 createTask.addEventListener('click', () => {
     mainComponent.style.opacity = 0.5;
     newTaskForm.style.display = 'block';
@@ -66,20 +68,11 @@ tasksElement.addEventListener('click', (e) => {
         console.log('Element is a task card element: ', e.target);
         const taskCardElement = getTaskParent(e.target);
         console.log('Parent task card element: ', taskCardElement);
+        focusCardOnClick(taskCardElement, mainComponent);
     } else {
         console.log('Element is not a task card element: ', e.target);
     }
 })
-
-function getTaskParent(element) {
-    if (element.id === 'card-parent') {
-        return element;
-    } else {
-        return getTaskParent(element.parentElement);
-    }
-}
-
-const newTaskForm = document.getElementById('create-task-modal');
 
 
 function closeModal(modal) {
