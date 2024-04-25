@@ -1,6 +1,6 @@
 import { Task, tasks, loadTasks, taskElemIds } from './js_modules/tasks.js'
 import { getSavedTasks, persistActiveTasks } from './js_modules/tasks_persistence.js'
-import { getTaskParent, focusCardOnClick } from './js_modules/card_functionality.js';
+import { getTaskParent, focusCardOnClick, removeCardFocus } from './js_modules/card_functionality.js';
 
 async function loadSavedTasks() {
     let savedTasks = await getSavedTasks();
@@ -21,6 +21,11 @@ async function loadSavedTasks() {
 loadSavedTasks();
 
 const mainComponent = document.querySelector('.main-component');
+mainComponent.addEventListener('click', () => {
+    if (mainComponent.style.opacity < 1) {
+        removeCardFocus(mainComponent);
+    }
+})
 
 const createTask = document.querySelector('#create-task');
 const newTaskForm = document.getElementById('create-task-modal');
