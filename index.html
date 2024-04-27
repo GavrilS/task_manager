@@ -40,26 +40,30 @@
     </div>
 
     <div class="popup" id="create-task-modal">
-        <p>
-            <label for="title">Title</label><br/>
-            <input type="text" id="create-task-title" name="title" placeholder="Task title">
-        </p>
-        <p>
-            <label for="description">Description</label><br/>
-            <input type="text" id="create-task-description" name="description" placeholder="Description">
-        </p>
-        <p>
-            <label for="status">Status</label><br/>
-            <input type="text" id="create-task-status" name="status" placeholder="Status">
-        </p>
-        <button class="popup-btn-save" id="create-new-task">Save New Task</button>
-        <button class="popup-btn-close">Close</button>
+        <div class="popupcontent">
+            <p>
+                <label for="title">Title</label><br/>
+                <input type="text" id="create-task-title" name="title" placeholder="Task title">
+            </p>
+            <p>
+                <label for="description">Description</label><br/>
+                <input type="text" id="create-task-description" name="description" placeholder="Description">
+            </p>
+            <p>
+                <label for="status">Status</label><br/>
+                <input type="text" id="create-task-status" name="status" placeholder="Status">
+            </p>
+            <button class="popup-btn-save" id="create-new-task">Save New Task</button>
+            <button class="popup-btn-close">Close</button>
+        </div>
     </div>
 
-    <div class="card-focus" id="card-popup">
-        <h1 id="card-title">Title</h1>
-        <p id="card-description">Description</p>
-        <h3 id="card-status">Status</h3>
+    <div class="card-focus popup" id="card-popup">
+        <!-- <div class="popupcontent"> -->
+            <h1 id="card-title">Title</h1>
+            <p id="card-description">Description</p>
+            <h3 id="card-status">Status</h3>
+        <!-- </div> -->
     </div>
 </body>
 </html>
