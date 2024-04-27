@@ -1,6 +1,7 @@
 import { Task, tasks, loadTasks, taskElemIds } from './js_modules/tasks.js'
 import { getSavedTasks, persistActiveTasks } from './js_modules/tasks_persistence.js'
 import { getTaskParent, focusCardOnClick, removeCardFocus } from './js_modules/card_functionality.js';
+import togglePopups from './js_modules/popup.js';
 
 async function loadSavedTasks() {
     let savedTasks = await getSavedTasks();
@@ -21,18 +22,19 @@ async function loadSavedTasks() {
 loadSavedTasks();
 
 const mainComponent = document.querySelector('.main-component');
-mainComponent.addEventListener('click', () => {
-    if (mainComponent.style.opacity < 1) {
-        console.log('Condition completed!');
-        removeCardFocus(mainComponent);
-    }
-})
+// mainComponent.addEventListener('click', () => {
+//     if (mainComponent.style.opacity < 1) {
+//         console.log('Condition completed!');
+//         removeCardFocus(mainComponent);
+//     }
+// })
 
 const createTask = document.querySelector('#create-task');
 const newTaskForm = document.getElementById('create-task-modal');
 createTask.addEventListener('click', () => {
     mainComponent.style.opacity = 0.5;
     newTaskForm.style.display = 'block';
+    // newTaskForm.classList.add('show');
     console.log(newTaskForm);
 })
 
