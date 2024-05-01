@@ -90,7 +90,7 @@ body {
 /* Popups Start */
 
 /* Popup container */
-/* .popup {
+.popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -98,10 +98,10 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-} */
+}
 
 /* The actual popup */
-/* .popup .popupcontent {
+.popup .popupcontent {
   visibility: hidden;
   width: 160px;
   background-color: #555;
@@ -114,10 +114,10 @@ body {
   bottom: 125%;
   left: 50%;
   margin-left: -80px;
-} */
+}
 
 /* Popup Arrow */
-/* .popup .popupcontent::after {
+.popup .popupcontent::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -126,17 +126,17 @@ body {
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
-} */
+}
 
 /* Toggle this class - hide and show the popup */
-/* .popup .show {
+.popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-} */
+}
 
 /* Add animation (fade in the popup */
-/* @-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
 }
@@ -144,7 +144,8 @@ body {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
-} */
+}
+/* Popup End */
 
 #create-task-modal {
   display: none;
@@ -166,7 +167,7 @@ body {
 /* Popups End */
 
 /* Card format start */
-.ag-format-container {
+/* .ag-format-container {
     width: 1142px;
     margin: 0 auto;
 }
@@ -313,5 +314,5 @@ body {
     .ag-courses-item_date-box {
       font-size: 16px;
     }
-  }
+  } */
 /* Card format end */
